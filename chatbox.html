@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <link rel="stylesheet" href="newpagestyle.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- font awesome cdn link -->
+    <link rel="icon" type="image/x-icon" href="image/logonew.png"><!-- Favicon / Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- Google font cdn link -->
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Hhh_14Uam62GXGaTMcXWhhVkYg0EbDY&callback=initMap" async defer></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="image/logonew.png" alt="">
+    </a>
+
+    <!--=============Menu Icon===========-->
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <!--==============LINKS================-->
+    <ul class="navbar">
+        <li><a href="index.html#home" target="_blank">home</a></li>
+        <li><a href="index.html#about" target="_blank">about us</a></li>
+        <li><a href="index.html#products" target="_blank">products</a></li>
+        <li><a href="index.html#customers" target="_blank">customer</a></li>
+
+    </ul>
+    <!--===========icon==========-->
+    <div class="header-icon">
+        
+        <i class='bx bxs-search' id="search-icon"></i>
+<!--=======SHOPPING CART==================================================================================================================-->
+        <div class="shopping">
+            <img src="image/cart.png">
+            <span class="quantity">0</span>
+        </div>
+<!--=======SHOPPING CART==================================================================================================================-->
+    </div>
+    <!--=======search box========-->
+    <div class="search-box">
+        <input type="search" name="" id="" placeholder="Search Here....">
+    </div>
+
+</header>
+
+
+<section class="about1" id="about1">
+    <div class="about1-img">
+        <img src="image/chatboxpage.jpg" alt="">
+    </div>
+    <!---==============WRITE HISTORY================-->
+    <div class="about1-text">
+        <h2>Introducing Our New Chat Box Feature</h2>
+        <p class="p1">Welcome to our website! We're thrilled to have you here. For a seamless and interactive experience, we encourage you to make the most of our chatbox feature. Whether you're looking to explore our menu, discover more about who we are, obtain our contact information, or find details about our locations, the chatbox is your one-stop solution.
+
+            </p>
+        <p class="p2">Simply type keywords such as "menu," "about," "contact," or "locations" to access the relevant information. Our user-friendly chatbot is designed to provide you with quick and efficient responses, ensuring that you have all the details you need at your fingertips. Feel free to engage with the chatbox and let it guide you through the various aspects of our offerings and services. We're here to make your visit enjoyable and informative, so dive into the chatbox and discover the wealth of information waiting for you!</p>
+        <a href="#" class="btn1">Learn More</a>
+    </div>
+</section>
+
+<div class="chat-bar-collapsible">
+    <button id="chat-button" type="button" class="collapsible">Chat with us! &nbsp;
+        <i id="chat-icon" style="color: #fff;" class="fas fa-comments"></i>
+    </button>
+    <div class="content">
+        <div class="full-chat-block">
+            <!-- Message Container -->
+            <div class="outer-container">
+                <div class="chat-container">
+                    <!-- Messages -->
+                    <div id="chatbox">
+                        <h5 id="chat-timestamp"></h5>
+                        <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                    </div>
+                    <!-- User input box -->
+                    <div class="chat-bar-input-block">
+                        <div id="userInput">
+                            <input id="textInput" class="input-box" type="text" name="msg"
+                                   placeholder="Tap 'Enter' to send a message">
+                            <p></p>
+                        </div>
+                        <div class="chat-bar-icons">
+                            <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-paper-plane"
+                               onclick="sendButton()"></i>
+                        </div>
+                    </div>
+                    <div id="chat-bar-bottom">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="footer">
+    <div class="footer-box">
+        <h2>Coffee Shop</h2>
+        <p>"Rumi Beans, an aesthetic haven, beckons with the comforting fragrance of freshly brewed dreams. Our coffee shop is a sanctuary where artistry meets warmth, inviting you to savor exquisite blends in a space designed for shared moments, making every visit a journey into the heart of coffee culture and connection."</p>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-tiktok' ></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>Support</h3>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Help & Support</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Term Of Use</a></li>
+        <li><a href="#">Product</a></li>
+    </div>
+    <div class="footer-box">
+        <h3>View Guides</h3>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog Posts</a></li>
+        <li><a href="#">Our Branches</a></li>
+    </div>
+    <div class="footer-box">
+        <h3>Contact</h3>
+        <div class="contact">
+            <span><i class='bx bxs-map'></i>Markaz G11/4,ISLAMABAD</span>
+            <span><i class='bx bxs-phone'></i>+92 333 786 786 </span>
+            <span><i class='bx bxs-envelope'></i>rumibeans@gmail.com</span>
+
+        </div>
+    </div>
+</section>
+
+</section>
+<!-- Copyright -->
+<div class="copyright">
+    <p>&#169; RUMI BEANS All Rights Reserved</p>
+</div>
+
+<script src="main.js"></script>
+
+<script src="convo.js"></script>
+<!-- Link to your second JavaScript file -->
+<script src="responses.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
